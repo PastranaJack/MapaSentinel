@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Mapa no Mapbox</title>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css" rel="stylesheet" />
+    <style>
+        body { margin: 0; padding: 0; }
+        #map { width: 100vw; height: 100vh; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiamFja3Bhc3RyYW5hIiwiYSI6ImNtOHJkcHk3OTB3ZmQybHB1dGVseTY0MmIifQ.R0wiTaF0RRDT1pAGOPgNAQ'; // Reemplázalo con tu token de Mapbox
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/jackpastrana/cm8rf96tc00a701qtazb19n66', // URL de tu estilo público
+            center: [-38.5270, -3.7327], // Coordenadas de Fortaleza
+            zoom: 12
+        });
+
+        // Agrega un marcador
+        new mapboxgl.Marker()
+            .setLngLat([-38.5270, -3.7327])
+            .setPopup(new mapboxgl.Popup().setText("Fortaleza - CE"))
+            .addTo(map);
+    </script>
+</body>
+</html>
+
